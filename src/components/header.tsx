@@ -16,7 +16,7 @@ export default function Header() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <header className="fixed top-0 z-50 w-full min-h-[48px] md:min-h-[56px] lg:min-h-[64px] flex items-center p-4 justify-between">
+    <header className="fixed top-0 z-50 w-full min-h-[48px] md:min-h-[56px] lg:min-h-[64px] flex items-center p-4 justify-between backdrop-blur-md bg-white/80">
       <div className="flex items-center gap-0.5 font-mono select-none">
         <SlidingNumber value={hours} padStart={true} />
         <span className="text-[var(--primary)]">:</span>
