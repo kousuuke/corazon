@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createShortUrl } from "../../../services/url.service";
+import { createShortUrl } from "@/services/services";
 
 export async function POST(request) {
   try {

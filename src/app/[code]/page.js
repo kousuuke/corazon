@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import React from "react";
-import { getOriginalUrlAndIncrementClicks } from "@/services/url.service.js";
-import DelayRedirectClient from "./delay.url";
+import { getOriginalUrlAndIncrementClicks } from "@/services/services";
+import DelayRedirectClient from "./delay";
 
 export default async function BeforeRedirectPage({ params }) {
   const shortCode = params.code;
@@ -23,7 +23,7 @@ export default async function BeforeRedirectPage({ params }) {
   }
 
   if (!urlEntry || !urlEntry.originalUrl) {
-    console.log(
+    console.error(
       `Short code "${shortCode}" not found. Redirecting to /not-found...`
     );
     redirect("/not-found");
