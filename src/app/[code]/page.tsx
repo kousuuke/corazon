@@ -14,9 +14,9 @@ interface UrlEntry {
 export default async function BeforeRedirectPage({
   params,
 }: {
-  params: { code: string };
+  params: Promise<{ code: string }>;
 }) {
-  const shortCode = params.code;
+  const { code: shortCode } = await params;
 
   if (!shortCode) {
     console.warn(
