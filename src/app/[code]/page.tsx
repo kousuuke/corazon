@@ -3,14 +3,6 @@ import React from "react";
 import { getOriginalUrlAndIncrementClicks } from "@/services/services";
 import DelayRedirectClient from "./delay";
 
-interface PageParams {
-  code: string;
-}
-
-interface BeforeRedirectPageProps {
-  params: PageParams;
-}
-
 interface UrlEntry {
   originalUrl: string;
   shortCode: string;
@@ -21,8 +13,10 @@ interface UrlEntry {
 
 export default async function BeforeRedirectPage({
   params,
-}: BeforeRedirectPageProps) {
-  const shortCode: string = params.code;
+}: {
+  params: { code: string };
+}) {
+  const shortCode = params.code;
 
   if (!shortCode) {
     console.warn(
