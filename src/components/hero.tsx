@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="flex flex-row items-center justify-center gap-2 text-[12px] md:text-md lg:text-lg text-[var(--foreground)] leading-7 select-none">
         Your Pure Path to Every Destination.
         <TextLoop
-          className="overflow-y-clip min-w-[150px]"
+          className="overflow-y-clip min-w-[90px] md:min-w-[90px] lg:min-w-[150px]"
           transition={{
             type: "spring",
             stiffness: 900,
