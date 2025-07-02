@@ -3,8 +3,26 @@ import React from "react";
 import { getOriginalUrlAndIncrementClicks } from "@/services/services";
 import DelayRedirectClient from "./delay";
 
-export default async function BeforeRedirectPage({ params }) {
-  const shortCode = params.code;
+interface PageParams {
+  code: string;
+}
+
+interface BeforeRedirectPageProps {
+  params: PageParams;
+}
+
+interface UrlEntry {
+  originalUrl: string;
+  shortCode: string;
+  clicks: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export default async function BeforeRedirectPage({
+  params,
+}: BeforeRedirectPageProps) {
+  const shortCode: string = params.code;
 
   if (!shortCode) {
     console.warn(
@@ -13,7 +31,7 @@ export default async function BeforeRedirectPage({ params }) {
     redirect("/");
   }
 
-  let urlEntry = null;
+  let urlEntry: UrlEntry | null = null;
 
   try {
     urlEntry = await getOriginalUrlAndIncrementClicks(shortCode);
@@ -28,6 +46,7 @@ export default async function BeforeRedirectPage({ params }) {
     );
     redirect("/not-found");
   }
+
   return (
     <DelayRedirectClient originalUrl={urlEntry.originalUrl} delaySeconds={5} />
   );

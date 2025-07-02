@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
         <TabsPanel />
         <Contacts />
-        <span className="select-none text-xl md:text-2xl lg:text-4xl col-span-full md:col-span-1 lg:col-start-3 text-center md:text-right self-end mt-4 md:mt-0">
+        <span className="select-none text-sm md:text-2xl lg:text-4xl col-span-full md:col-span-1 lg:col-start-3 text-center md:text-right self-end mt-4 md:mt-0">
           2025
         </span>
       </footer>

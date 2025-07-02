@@ -10,8 +10,6 @@
   --secondary-foreground: #fefefe;
   --muted: #212121;
   --muted-foreground: #b5b5b5;
-  --accent: #2f2f2f;
-  --accent-foreground: #fefefe;
 
   --border: #1717172c;
   --input: #ffffff26;
@@ -24,22 +22,8 @@
   --font-sans: var(--font-inter-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #1a1a1a;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.select-none {
-  -webkit-user-select: none; /* for safari and chrome */
-  -moz-user-select: none; /* for firefox */
-  -ms-user-select: none; /* for internet explorer or edge */
-  user-select: none;
 }
