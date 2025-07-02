@@ -8,10 +8,10 @@ export default function Hero() {
         Silent the <span className="text-[var(--foreground)]">Noise</span>
         <br></br>of Long Links
       </h1>
-      <div className="text-center text-[12px] md:text-md lg:text-lg text-[var(--foreground)] leading-7 select-none">
-        Your Pure Path to Every Destination. {""}
+      <div className="flex flex-row items-center justify-center gap-2 text-[12px] md:text-md lg:text-lg text-[var(--foreground)] leading-7 select-none">
+        Your Pure Path to Every Destination.
         <TextLoop
-          className="overflow-y-clip min-w-[90px] sm:min-w-[120px] md:min-w-[150px] lg:min-w-[200px]"
+          className="overflow-y-clip min-w-[150px]"
           transition={{
             type: "spring",
             stiffness: 900,
